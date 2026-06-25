@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Slap From Anshika 💥</title>
+<meta name="description" content="Enter your name and receive a legendary slap from Anshika." />
+<meta property="og:title" content="Slap From Anshika 💥" />
+<meta property="og:description" content="Enter your name and receive a legendary slap from Anshika." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✋%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#fbf7ee; --fg:#1a1410; --primary:#e23b2b; --accent:#f6c845;
+    --hot:#ff2d6d; --electric:#3aa7ff; --lime:#c7f25a; --muted:#7a6f66;
+  }
+  *{box-sizing:border-box;border:0 solid var(--fg)}
+  html,body{margin:0;padding:0}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden}
+  button{font:inherit;cursor:pointer}
+  input{font:inherit}
+
+  .screen{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+
+  /* Intro screen */
+  .intro{
+    background:
+      radial-gradient(circle at 20% 20%, var(--accent) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, var(--hot) 0%, transparent 50%),
+      var(--bg);
+  }
+  .blob{position:absolute;width:420px;height:420px;opacity:.6;pointer-events:none;filter:blur(2px);
+    animation:blob 8s ease-in-out infinite}
+  .blob.a{top:-160px;left:-160px;background:linear-gradient(135deg,var(--electric),var(--lime))}
+  .blob.b{bottom:-160px;right:-160px;width:480px;height:480px;background:linear-gradient(135deg,var(--hot),var(--accent));animation-delay:2s}
+  .emoji{position:absolute;user-select:none;pointer-events:none}
+  .e1{top:40px;right:40px;font-size:60px;animation:float 4s ease-in-out infinite}
+  .e2{bottom:60px;left:50px;font-size:48px;animation:float 4s ease-in-out infinite 1.5s}
+  .e3{top:33%;left:30px;font-size:40px;animation:wiggle 1.2s ease-in-out infinite}
+  .e4{bottom:25%;right:60px;font-size:40px;animation:wiggle 1.2s ease-in-out infinite .3s}
+
+  .card{position:relative;z-index:2;width:100%;max-width:560px;background:var(--bg);
+    border:3px solid var(--fg);border-radius:28px;padding:40px;
+    box-shadow:12px 12px 0 0 var(--fg);animation:pop .6s cubic-bezier(.34,1.56,.64,1) both}
+  .badge{display:inline-block;padding:4px 12px;margin-bottom:16px;background:var(--fg);color:var(--bg);
+    font-size:11px;font-weight:700;letter-spacing:.2em;border-radius:999px}
+  h1{font-family:'Bungee',sans-serif;font-size:clamp(40px,7vw,80px);line-height:.95;margin:0 0 12px;
+    background:linear-gradient(90deg,var(--hot),var(--primary),var(--electric));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--muted);font-size:18px;margin:0 0 28px}
+  .lead b{color:var(--fg)}
+  input[type=text]{width:100%;padding:16px 20px;font-size:20px;font-weight:700;
+    border:3px solid var(--fg);border-radius:18px;background:var(--bg);outline:none;
+    box-shadow:6px 6px 0 0 var(--fg);transition:all .15s}
+  input[type=text]:focus{transform:translate(4px,4px);box-shadow:0 0 0 0 var(--fg)}
+  .btn{display:block;width:100%;margin-top:16px;padding:16px 24px;font-family:'Bungee',sans-serif;
+    font-size:20px;letter-spacing:.1em;border:3px solid var(--fg);border-radius:18px;
+    background:var(--fg);color:var(--bg);transition:all .15s}
+  .btn:hover:not(:disabled){transform:translateY(-4px);box-shadow:6px 8px 0 0 var(--hot)}
+  .btn:active{transform:translateY(0);box-shadow:none}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.accent{background:var(--accent);color:var(--fg)}
+  .btn.accent:hover{box-shadow:4px 6px 0 0 var(--fg)}
+  .footnote{text-align:center;margin-top:24px;color:var(--muted);font-size:14px;font-weight:500}
+
+  /* Slap screen */
+  .slap{display:none;
+    background:radial-gradient(circle at center, var(--accent) 0%, var(--hot) 60%, #4a0a14 100%);
+    animation:shake .5s cubic-bezier(.36,.07,.19,.97) both}
+  .sunburst{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+  .sunburst > div{width:200vmax;height:200vmax;opacity:.3;animation:spin 18s linear infinite;
+    background:repeating-conic-gradient(from 0deg,#fff8e7 0deg 10deg,transparent 10deg 20deg)}
+  .speedlines{position:absolute;inset:0;pointer-events:none;animation:rainbow 4s linear infinite;
+    background:repeating-linear-gradient(45deg,transparent 0 40px,rgba(255,255,255,.08) 40px 42px)}
+  .stars{position:absolute;inset:0;pointer-events:none}
+  .stars span{position:absolute;font-size:60px;animation:float 4s ease-in-out infinite}
+  .stars span:nth-child(1){top:40px;left:40px}
+  .stars span:nth-child(2){top:80px;right:60px;font-size:72px;animation-delay:.8s}
+  .stars span:nth-child(3){bottom:60px;left:80px;animation-delay:1.2s}
+  .stars span:nth-child(4){bottom:90px;right:40px;font-size:72px;animation-delay:.4s}
+
+  .slap-content{position:relative;z-index:2;text-align:center;max-width:640px;width:100%}
+  .hand{font-size:clamp(140px,22vw,220px);line-height:1;filter:drop-shadow(0 20px 25px rgba(0,0,0,.3));
+    animation:slap .7s cubic-bezier(.5,-0.5,.5,1.5) both}
+  .slapword{font-family:'Bungee',sans-serif;font-size:clamp(80px,14vw,160px);
+    letter-spacing:-.04em;margin:-16px 0 8px;color:#fff8e7;opacity:0;
+    text-shadow:6px 6px 0 var(--fg),0 0 40px var(--hot);
+    animation:pop .6s cubic-bezier(.34,1.56,.64,1) .4s forwards}
+  .message{background:var(--bg);border:3px solid var(--fg);border-radius:28px;padding:28px;margin-top:32px;
+    box-shadow:10px 10px 0 0 var(--fg);opacity:0;animation:zoomIn .5s cubic-bezier(.34,1.56,.64,1) .7s forwards}
+  .message .hi{font-family:'Bungee',sans-serif;font-size:28px;margin:0 0 4px}
+  .message .hi span{color:var(--primary)}
+  .message .from{font-size:20px;font-weight:700;margin:0}
+  .message .from .who{display:inline-block;animation:wiggle 1.2s ease-in-out infinite;
+    background:linear-gradient(90deg,var(--hot),var(--electric));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .message .small{color:var(--muted);font-size:14px;margin:10px 0 0}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
+  .actions .btn{margin:0;width:auto;padding:12px 20px;font-size:16px}
+
+  @keyframes pop{0%{transform:scale(0) rotate(-20deg);opacity:0}60%{transform:scale(1.25) rotate(5deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+  @keyframes zoomIn{0%{transform:scale(0) rotate(-180deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+  @keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+  @keyframes shake{10%,90%{transform:translate3d(-2px,0,0)}20%,80%{transform:translate3d(4px,0,0)}30%,50%,70%{transform:translate3d(-8px,0,0)}40%,60%{transform:translate3d(8px,0,0)}}
+  @keyframes slap{0%{transform:translateX(-120vw) rotate(-45deg) scale(.3);opacity:0}55%{transform:translateX(0) rotate(25deg) scale(1.4);opacity:1}70%{transform:translateX(8px) rotate(20deg) sca
+}
+  @keyframes blob{0%,100%{border-radius:42% 58% 70% 30% / 45% 45% 55% 55%;transform:translate(0,0) scale(1)}33%{border-radius:70% 30% 46% 54% / 30% 60% 40% 70%;transform:translate(30px,-20px) sca
+}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes rainbow{to{filter:hue-rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<main id="intro" class="screen intro">
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+  <div class="emoji e1">✋</div>
+  <div class="emoji e2">💥</div>
+  <div class="emoji e3">⭐</div>
+  <div class="emoji e4">🔥</div>
+
+  <div class="card">
+    <div class="badge">ANSHIKA INC.</div>
+    <h1>HEY BOY,<br>WHAT'S UR NAME?</h1>
+    <p class="lead">Type your name below. Something <b>spectacular</b> awaits. 👀</p>
+    <form id="form" autocomplete="off">
+      <input id="name" type="text" placeholder="e.g. Rohan..." autofocus />
+      <button class="btn" id="submit" type="submit" disabled>CONTINUE →</button>
+    </form>
+    <p class="footnote">⚠️ Side effects may include: redness, regret, enlightenment.</p>
+  </div>
+</main>
+
+<main id="slap" class="screen slap">
+  <div class="sunburst"><div></div></div>
+  <div class="speedlines"></div>
+  <div class="stars"><span>⭐</span><span>💫</span><span>✨</span><span>⭐</span></div>
+
+  <div class="slap-content">
+    <div class="hand">✋</div>
+    <div class="slapword">SLAP!</div>
+    <div class="message">
+      <p class="hi">Hey <span id="who">friend</span> 👋</p>
+      <p class="from">That slap was from <span class="who">Anshika</span> 💥</p>
+      <p class="small">Delivered with love, force, and 0% remorse.</p>
+      <div class="actions">
+        <button class="btn accent" id="again">SLAP AGAIN 🔁</button>
+        <button class="btn" id="reset">NEW VICTIM</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const intro = document.getElementById('intro');
+  const slap = document.getElementById('slap');
+  const form = document.getElementById('form');
+  const nameInput = document.getElementById('name');
+  const submitBtn = document.getElementById('submit');
+  const who = document.getElementById('who');
+
+  nameInput.addEventListener('input', () => {
+    submitBtn.disabled = !nameInput.value.trim();
+  });
+
+  function showSlap(name){
+    who.textContent = name;
+    intro.style.display = 'none';
+    slap.style.display = 'flex';
+    // restart animations
+    slap.style.animation = 'none'; void slap.offsetWidth; slap.style.animation = '';
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = nameInput.value.trim();
+    if (v) showSlap(v);
+  });
+
+  document.getElementById('again').addEventListener('click', () => {
+    // re-run all animations on the slap screen
+    const clones = slap.querySelectorAll('.hand, .slapword, .message');
+    clones.forEach(el => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; });
+    slap.style.animation = 'none'; void slap.offsetWidth; slap.style.animation = 'shake .5s cubic-bezier(.36,.07,.19,.97) both';
+  });
+
+  document.getElementById('reset').addEventListener('click', () => {
+    slap.style.display = 'none';
+    intro.style.display = 'flex';
+    nameInput.value = '';
+    submitBtn.disabled = true;
+    nameInput.focus();
+  });
+</script>
+</body>
+</html>
