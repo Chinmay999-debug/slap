@@ -1,4 +1,4 @@
-# Slap From Anshika 💥 — Static Version
+# Slap From Simran 💥 — Static Version
 
 A single-file static version of the app, ready for **GitHub Pages**.
 
@@ -13,7 +13,7 @@ That's it. One file. No build, no dependencies.
 
 ## How to host on GitHub Pages
 
-1. Create a new GitHub repository (e.g. `slap-from-anshika`).
+1. Create a new GitHub repository (e.g. `slap-from-simran`).
 2. Upload `index.html` to the **root** of the repo (drag & drop in the GitHub UI works).
 3. Go to **Settings → Pages**.
 4. Under **Source**, pick **Deploy from a branch**.

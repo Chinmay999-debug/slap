@@ -33,7 +33,7 @@ function Index() {
       <div className="relative z-10 w-full max-w-xl">
         <div className="bg-background border-[3px] border-foreground rounded-3xl p-8 sm:p-12 shadow-[12px_12px_0px_0px_oklch(0.18_0.04_25)] animate-pop">
           <div className="inline-block px-3 py-1 mb-4 bg-foreground text-background text-xs font-bold tracking-widest rounded-full">
-            ANSHIKA INC.
+            SIMRAN INC.
           </div>
           <h1 className="font-display text-5xl sm:text-7xl leading-[0.95] mb-3"
             style={{ background: "linear-gradient(90deg, oklch(0.7 0.27 0), oklch(0.62 0.25 12), oklch(0.75 0.2 220))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
@@ -110,7 +110,7 @@ function SlapScreen({ name, onAgain, onReplay }: { name: string; onAgain: () => 
           </p>
           <p className="text-lg sm:text-xl font-bold text-foreground">
             That slap was from <span className="inline-block animate-wiggle"
-              style={{ background: "linear-gradient(90deg, oklch(0.7 0.27 0), oklch(0.75 0.2 220))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Anshika</span> 💥
+              style={{ background: "linear-gradient(90deg, oklch(0.7 0.27 0), oklch(0.75 0.2 220))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Simran</span> 💥
           </p>
           <p className="text-sm text-muted-foreground mt-3">
             Delivered with love, force, and 0% remorse.
